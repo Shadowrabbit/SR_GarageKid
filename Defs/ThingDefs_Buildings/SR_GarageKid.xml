@@ -14,36 +14,51 @@
     </graphicData>
   </ThingDef>
   <ThingDef Name="GarageKidBase" ParentName="BuildingBase" Abstract="True">
+    <!-- 是否允许穿过 -->
     <passability>PassThroughOnly</passability>
+    <!-- 从上面路过的走的速度程度 -->
     <pathCost>60</pathCost>
     <!-- 袖珍物品 可拆卸搬运 -->
     <minifiedDef>MinifiedThing</minifiedDef>
+    <!-- 图像在哪一层 -->
     <altitudeLayer>Building</altitudeLayer>
+    <!-- 是否可以旋转 -->
     <rotatable>false</rotatable>
     <!-- <thingClass>Building_MusicalInstrument</thingClass> -->
+    <!-- ticker的执行频率 -->
     <tickerType>Normal</tickerType>
     <socialPropernessMatters>true</socialPropernessMatters>
     <hasInteractionCell>true</hasInteractionCell>
+    <!-- 物品类别 -->
     <thingCategories>
       <li>BuildingsArt</li>
     </thingCategories>
+    <!-- 交易标签 -->
     <tradeTags>
       <li>Art</li>
     </tradeTags>
     <statBases>
+    <!-- 质量 -->
       <Mass>1</Mass>
     </statBases>
+    <!-- 配方 -->
     <recipeMaker>
+    <!-- 某种工作加成,有cook和drug，不太清楚填通用就好了 -->
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <!-- 制作时有加成的技能 -->
       <workSkill>Artistic</workSkill>
+      <!-- 工作特效 -->
       <effectWorking>Sculpt</effectWorking>
+      <!-- 工作音效 -->
       <soundWorking>Recipe_Sculpt</soundWorking>
+      <!-- 未完成的物品对应哪个def -->
       <unfinishedThingDef>UnfinishedGarageKid</unfinishedThingDef>
     </recipeMaker>
     <!-- 地形支持需求 可选 Light Medium Heavy Bridgeable Diggable -->
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <comps>
       <li>
+      <!-- 这个组件有品质效果，美观度等属性会变化 -->
         <compClass>CompQuality</compClass>
       </li>
     </comps>
@@ -66,7 +81,9 @@
     <fillPercent>1.0</fillPercent>
     <rotatable>false</rotatable>
     <statBases>
+      <!-- 耐久 -->
       <MaxHitPoints>300</MaxHitPoints>
+      <!-- 制作工作量 -->
       <WorkToMake>30000</WorkToMake>
       <!-- 可燃性 -->
       <Flammability>1.0</Flammability>
@@ -76,8 +93,10 @@
     </statBases>
     <canOverlapZones>false</canOverlapZones>
     <size>(1,1)</size>
+    <!-- 品质奖励的标准 -->
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
     <recipeMaker>
+      <!-- 需要的技能6级制造6级艺术 可以复合 -->
       <skillRequirements>
         <Crafting>6</Crafting>
         <Artistic>6</Artistic>
