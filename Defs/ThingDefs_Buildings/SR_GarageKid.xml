@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>UnfinishedGarageKid</defName>
+    <label>未完成的手办</label>
+    <description>一个未完成的手办</description>
+    <!-- 什么类型的材料 享受对应的属性 -->
+    <stuffCategories>
+      <li>Resin</li>
+    </stuffCategories>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedMusicalInstrument</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef Name="GarageKidBase" ParentName="BuildingBase" Abstract="True">
+    <passability>PassThroughOnly</passability>
+    <pathCost>60</pathCost>
+    <!-- 袖珍物品 可拆卸搬运 -->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <!-- <thingClass>Building_MusicalInstrument</thingClass> -->
+    <tickerType>Normal</tickerType>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <hasInteractionCell>true</hasInteractionCell>
+    <thingCategories>
+      <li>BuildingsArt</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Art</li>
+    </tradeTags>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Artistic</workSkill>
+      <effectWorking>Sculpt</effectWorking>
+      <soundWorking>Recipe_Sculpt</soundWorking>
+      <unfinishedThingDef>UnfinishedGarageKid</unfinishedThingDef>
+    </recipeMaker>
+    <!-- 地形支持需求 可选 Light Medium Heavy Bridgeable Diggable -->
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="GarageKidBase">
+    <defName>GarageKid_Chicken</defName>
+    <label>手办(鸡)</label>
+    <description>一个关于鸡的手办,真是太美了</description>
+    <graphicData>
+      <texPath>Things/Building/SR_GarageKid/GarageKid_Chicken</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <!-- <drawSize>(2.6,2.6)</drawSize>
+      <shadowData>
+        <volume>(1.93,1,1.69)</volume>
+        <offset>(-0.03,0,-0.1)</offset>
+      </shadowData> -->
+    </graphicData>
+    <!-- 是否妨碍视线 -->
+    <blockWind>false</blockWind>
+    <fillPercent>1.0</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToMake>30000</WorkToMake>
+      <!-- 可燃性 -->
+      <Flammability>1.0</Flammability>
+      <!-- 出售加成 -->
+      <SellPriceFactor>1.5</SellPriceFactor>
+      <Beauty>400</Beauty>
+    </statBases>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,1)</size>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+        <Artistic>6</Artistic>
+      </skillRequirements>
+      <!-- 需要的前置研究 -->
+      <!-- <researchPrerequisite>Piano</researchPrerequisite> -->
+      <!-- 在什么地方制造 -->
+      <recipeUsers>
+        <li>TableSculpting</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <Resin>100</Resin>
+    </costList>
+  </ThingDef>
+</Defs>
