@@ -20,8 +20,9 @@
       <DeteriorationRate>1.0</DeteriorationRate>
     </statBases>
     <stuffProps>
+      <!-- 材料类型 -->
       <categories>
-        <li>Resin</li>
+        <li>Resiny</li>
       </categories>
       <commonality>0.15</commonality>
       <color>(245,245,245)</color>

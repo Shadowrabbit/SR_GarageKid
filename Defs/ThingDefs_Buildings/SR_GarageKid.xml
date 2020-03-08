@@ -6,7 +6,7 @@
     <description>一个未完成的手办</description>
     <!-- 什么类型的材料 享受对应的属性 -->
     <stuffCategories>
-      <li>Resin</li>
+      <li>Resiny</li>
     </stuffCategories>
     <graphicData>
       <texPath>Things/Item/Unfinished/UnfinishedMusicalInstrument</texPath>
